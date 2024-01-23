@@ -51,7 +51,7 @@ function FormComponent() {
     }
 
     try {
-      const response = await fetch('/api/salvaDati', {
+      const response = await fetch('http://localhost:5001/api/salvaDati', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
