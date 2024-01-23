@@ -2,11 +2,22 @@
 const fs = require('fs');
 
 module.exports = async (req, res) => {
-  const data = req.body;
+  try {
+    const dataFilePath = 'data.json';
+    const data = req.body;
 
-  const existingData = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
-  existingData.push(data);
-  fs.writeFileSync('data.json', JSON.stringify(existingData));
+    // Leggi i dati attuali dal file JSON
+    const existingData = JSON.parse(fs.readFileSync(dataFilePath, 'utf-8'));
 
-  res.json({ message: 'Dati salvati con successo.' });
+    // Aggiungi i nuovi dati
+    existingData.push(data);
+
+    // Scrivi i dati aggiornati sul file JSON
+    fs.writeFileSync(dataFilePath, JSON.stringify(existingData));
+
+    res.json({ message: 'Dati salvati con successo.' });
+  } catch (error) {
+    console.error('Errore durante il salvataggio dei dati:', error);
+    res.status(500).json({ error: 'Si è verificato un errore durante il salvataggio dei dati.' });
+  }
 };
