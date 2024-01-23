@@ -2,8 +2,7 @@
     "version": 2,
     "functions": {
       "api/salvaDati": {
-        "runtime": "node@16",
-        "source": "server/salvaDati.js"
+        "runtime": "node@14"
       }
     }
   }
