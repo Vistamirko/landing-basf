@@ -1,0 +1,7 @@
+{
+    "functions": {
+      "/api/salvaDati": {
+        "handler": "server/salvaDati"
+      }
+    }
+  }

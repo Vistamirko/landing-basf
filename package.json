@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node server/server.js"
+    "server": "node server/server.js",
+    "vercel-build": "npm run build && mv build public"
   },
   "eslintConfig": {
     "extends": [
