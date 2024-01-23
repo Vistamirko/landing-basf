@@ -1,9 +1,10 @@
 {
     "version": 2,
     "functions": {
-      "salvaDati": {
+      "api/salvaDati": {
         "runtime": "node@14",
-        "handler": "server/salvaDati.handler"
+        "includeFiles": "server/salvaDati.js"
       }
     }
-  }  
+  }
+  
