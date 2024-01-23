@@ -1,10 +1,8 @@
 {
     "version": 2,
-    "functions": {
-      "api/salvaDati": {
-        "runtime": "node@14"
-      }
-    },
-    "include": ["server/**/*"] 
+    "builds": [{ "src": "server/salvaDati.js", "use": "@now/node" }],
+    "routes": [
+      { "src": "/api/salvaDati", "dest": "server/salvaDati.js" }
+    ]
   }
   
