@@ -6,13 +6,7 @@ const fs = require('fs');
 const app = express();
 const port = 5001;
 
-// Configurazione CORS
-const corsOptions = {
-  origin: 'https://landing-basf.vercel.app',
-  optionsSuccessStatus: 200, // Alcuni browser potrebbero richiedere questo per il supporto di CORS
-};
-app.use(cors(corsOptions));
-
+app.use(cors());
 app.use(bodyParser.json());
 
 // Aggiunta di una logica per creare 'data.json' se non esiste
